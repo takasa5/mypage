@@ -26,11 +26,10 @@ function setup() {
     cnv.style("position", "absolute");
     cnv.style("padding", 0);
     cnv.style("margin", 0);
-    cnv.mouseClicked(getCoord);
+    cnv.mouseClicked(clickAction);
     triangle = new Triangle();
     screenStatus = "DEFAULT";
 }
-
 function draw() {
     if (checkInTriangle(winMouseX, winMouseY)) {
         if (screenStatus == "DEFAULT") {
@@ -38,12 +37,15 @@ function draw() {
         } else {
             cursor(HAND);
         }
+        $(".bg-font").fadeOut();
     } else {
         if (winMouseY > triangle.left.y && winMouseX > triangle.left.x && winMouseX < triangle.right.x) {
             if (screenStatus == "BOTTOM")
                 cursor(ARROW);
-            else
+            else {
                 cursor(HAND);
+                $("#profile-font").fadeIn();
+            }
         } else if (winMouseX > triangle.top.x && winMouseY < triangle.right.y) {
             if (screenStatus == "RIGHT")
                 cursor(ARROW);
@@ -56,6 +58,7 @@ function draw() {
                 cursor(HAND);
         } else {
             cursor(ARROW);
+            $(".bg-font").fadeOut();
         }
     }
 }
@@ -66,7 +69,7 @@ function windowResized() {
     triangle.refresh();
 }
 
-function getCoord() {
+function clickAction() {
     console.log(winMouseX, winMouseY);
     if (checkInTriangle(winMouseX, winMouseY)) {
         console.log("in");
@@ -79,16 +82,18 @@ function getCoord() {
                 triangle.refresh();
             });
             screenStatus = "DEFAULT";
+            $(".modal").fadeOut();
         }
     }else{
         if (winMouseY > triangle.left.y && winMouseX > triangle.left.x && winMouseX < triangle.right.x) {
             console.log("bottom");
             $("#triangle").animate({
-                "top": "-10%",
+                "top": "-20%",
                 "opacity": "0.3"
             }, 400, function() {
                 triangle.refresh();
             });
+            $("#profile-modal").fadeIn();
             screenStatus = "BOTTOM";
         } else if (winMouseX > triangle.top.x && winMouseY < triangle.right.y) {
             console.log("right");
@@ -111,7 +116,20 @@ function getCoord() {
             });
             screenStatus = "LEFT";
         }
+        $(".bg-font").fadeOut();
     }
+}
+
+function onClose() {
+    $("#triangle").animate({
+        "top": "50%",
+        "left": "50%",
+        "opacity": "1"
+    }, 400, function() {
+        triangle.refresh();
+    });
+    screenStatus = "DEFAULT";
+    $(".modal").fadeOut();
 }
 
 function checkInTriangle(x, y) {
