@@ -17,9 +17,10 @@ class Triangle {
             $("#triangle > img").offset().top + $("#triangle > img").height());
         this.right = new Coord($("#triangle > img").offset().left + $("#triangle > img").width(),
             $("#triangle > img").offset().top + $("#triangle > img").height());
-        console.log(this);
+        // console.log(this);
     }
 }
+
 function setup() {
     cnv = createCanvas(windowWidth, windowHeight);
     cnv.parent("bg");
@@ -29,6 +30,7 @@ function setup() {
     cnv.mouseClicked(clickAction);
     triangle = new Triangle();
     screenStatus = "DEFAULT";
+    $(".container").height($(".modal").height() - $(".title-font").height() - 0.5 * $(".close-button").height());
 }
 function draw() {
     if (checkInTriangle(winMouseX, winMouseY)) {
@@ -37,20 +39,22 @@ function draw() {
         } else {
             cursor(HAND);
         }
-        $(".bg-font").fadeOut();
+        $(".bg-font").fadeOut(50);
     } else {
         if (winMouseY > triangle.left.y && winMouseX > triangle.left.x && winMouseX < triangle.right.x) {
             if (screenStatus == "BOTTOM")
                 cursor(ARROW);
             else {
                 cursor(HAND);
-                $("#profile-font").fadeIn();
+                onlyPopBGFont("#profile-font");
             }
         } else if (winMouseX > triangle.top.x && winMouseY < triangle.right.y) {
             if (screenStatus == "RIGHT")
                 cursor(ARROW);
-            else
+            else {
                 cursor(HAND);
+                onlyPopBGFont("#project-font");
+            }
         } else if (winMouseX < triangle.top.x && winMouseY < triangle.left.y) {
             if (screenStatus == "LEFT")
                 cursor(ARROW);
@@ -58,7 +62,7 @@ function draw() {
                 cursor(HAND);
         } else {
             cursor(ARROW);
-            $(".bg-font").fadeOut();
+            $(".bg-font").fadeOut(50);
         }
     }
 }
@@ -67,12 +71,13 @@ function windowResized() {
     cnv.style("width", windowWidth + "px");
     cnv.style("height", windowHeight + "px");
     triangle.refresh();
+    $(".container").height($(".modal").height() - $(".title-font").height() - 0.5 * $(".close-button").height());
 }
 
 function clickAction() {
-    console.log(winMouseX, winMouseY);
+    // console.log(winMouseX, winMouseY);
     if (checkInTriangle(winMouseX, winMouseY)) {
-        console.log("in");
+        // console.log("in");
         if (screenStatus != "DEFAULT") {
             $("#triangle").animate({
                 "top": "50%",
@@ -81,22 +86,25 @@ function clickAction() {
             }, 400, function() {
                 triangle.refresh();
             });
+            replaceModal(screenStatus);
             screenStatus = "DEFAULT";
-            $(".modal").fadeOut();
         }
     }else{
         if (winMouseY > triangle.left.y && winMouseX > triangle.left.x && winMouseX < triangle.right.x) {
-            console.log("bottom");
+            // console.log("bottom");
             $("#triangle").animate({
                 "top": "-20%",
                 "opacity": "0.3"
             }, 400, function() {
                 triangle.refresh();
             });
-            $("#profile-modal").fadeIn();
+            $("#profile-modal").animate({
+                "top": "0%",
+                "opacity": "1",
+            });
             screenStatus = "BOTTOM";
         } else if (winMouseX > triangle.top.x && winMouseY < triangle.right.y) {
-            console.log("right");
+            // console.log("right");
             $("#triangle").animate({
                 "top": "80%",
                 "left": "0%",
@@ -104,9 +112,14 @@ function clickAction() {
             }, 400, function() {
                 triangle.refresh();
             });
+            $("#project-modal").animate({
+                "top": "0%",
+                "left": "0%",
+                "opacity": "1"
+            });
             screenStatus = "RIGHT";
         } else if (winMouseX < triangle.top.x && winMouseY < triangle.left.y) {
-            console.log("left");
+            // console.log("left");
             $("#triangle").animate({
                 "top": "80%",
                 "left": "100%",
@@ -116,7 +129,35 @@ function clickAction() {
             });
             screenStatus = "LEFT";
         }
-        $(".bg-font").fadeOut();
+        $(".bg-font").fadeOut(50);
+    }
+}
+
+var bgfonts = ["#profile-font", "#project-font"];
+function onlyPopBGFont(id) {
+    for(var i = 0; i < bgfonts.length; i++) {
+        if (id == bgfonts[i])
+            $(bgfonts[i]).fadeIn(50);
+        else
+            $(bgfonts[i]).fadeOut(50);
+    }
+}
+
+function replaceModal(status) {
+    switch (status) {
+        case "BOTTOM":
+            $("#profile-modal").animate({
+                "top": "150%",
+                "opacity": "0",
+            });
+            break;
+        case "RIGHT":
+            $("#project-modal").animate({
+                "top": "-100%",
+                "left": "150%",
+                "opacity": "0"
+            });
+            break;
     }
 }
 
@@ -128,8 +169,8 @@ function onClose() {
     }, 400, function() {
         triangle.refresh();
     });
+    replaceModal(screenStatus);
     screenStatus = "DEFAULT";
-    $(".modal").fadeOut();
 }
 
 function checkInTriangle(x, y) {

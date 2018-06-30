@@ -14,6 +14,7 @@
     <div id="bg">
         <div class="bg-image" style="width: 100vw; height: 100vh"></div>
         <p class="bg-font" id="profile-font">PROFILE</p>
+        <p class="bg-font" id="project-font">PROJECT</p>
         <div id="triangle">
             <img src="img/triangle5.svg" style="position:absolute;">
             <p>T K S 5</p>
@@ -21,9 +22,9 @@
     </div>
     <div class="modal" id="profile-modal">
         <p class="title-font">PROFILE</p>
-        <div class="container">
-            <img src="img/triangle5.svg">
-            <div style="text-align: left">
+        <div class="container" id="profile-container">
+            <img id="profile-img" src="img/triangle5.svg">
+            <div style="text-align: left;">
                 <b>高砂(takasago)</b><br>
                 イメージカラー<div style="display: inline;background-color: black;color: #d4f0ff">#d4f0ff</div>を持つ三角形<br>
                 趣味は散歩、音楽を聴くこと、写真を撮ること(全部同時にできる)<br>
@@ -32,6 +33,10 @@
                 <a href="https://takasa-5.blogspot.com/"><i class="fab fa-blogger fa-lg fa-fw" style="color: #fe6602"></i>takasa-5</a>
             </div>
         </div>
+        <a href="javascript:void(0);" onclick="onClose();"><i class="far fa-times-circle fa-5x close-button"></i></a>
+    </div>
+    <div class="modal" id="project-modal">
+        <p class="title-font">PROJECT</p>
         <a href="javascript:void(0);" onclick="onClose();"><i class="far fa-times-circle fa-5x close-button"></i></a>
     </div>
 </body>
