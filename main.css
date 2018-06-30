@@ -72,6 +72,9 @@ html, body {
         left:50%;
         transform:translateX(-50%)
     }
+    .container {
+        width: 80%;
+    }
  }
  @media screen and (orientation: portrait) {
     /* 縦向きの場合のスタイル */
@@ -84,6 +87,9 @@ html, body {
         width: 100%;
         top: 50%;
         transform: translateY(-50%);
+    }
+    .container {
+        width: 80%;
     }
 }
 #triangle{
@@ -109,19 +115,39 @@ html, body {
     transform: translate(-50%,-50%);
     margin:0;
     padding:0;
-    background-color: white;
-    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.8);
     width: 80vw;
     height: 80vh;
 }
 .close-button {
     color: black;
-    border-radius: 50%;
-    background-color: white;
-    position: relative;
+    background: linear-gradient(to bottom, transparent 0%, transparent 49%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 100%);
+    border-radius: 0 0 50% 50%;
+    position: absolute;
     top: 100%;
     left: 50%;
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
+}
+.title-font {
+    text-align: center;
+    font-size: 3em;
+    top: 50%;
+    left: 50%;
+    white-space: nowrap;
+    font-family: 'Impact', 'arial black';
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    position: absolute;
+    left:50%;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-align: center;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 2fr;
 }
