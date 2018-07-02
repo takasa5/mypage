@@ -37,7 +37,7 @@ html, body {
 }
 #triangle > p {
     position: absolute;
-    font-size: 5em;
+    font-size: 10vmax;
     top: 50%;
     left: 50%;
     white-space: nowrap;
@@ -85,10 +85,21 @@ html, body {
         transform: translate(-50%, -50%);
         text-align: center;
         grid-gap: 10px;
+        margin-top: 15px;
+        overflow: auto;
     }
     #profile-container {
         grid-template-columns: 1fr 2fr;
     }
+    #project-container {
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .project-box {
+        width: 45%;
+        font-size: 2vmax;
+    }
+    
  }
  @media screen and (orientation: portrait) {
     /* 縦向きの場合のスタイル */
@@ -121,9 +132,17 @@ html, body {
     #profile-img {
         height: 10vh;
     }
+    #project-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 80px;
+    }
+    .project-box {
+        width: 95%;
+        margin: auto;
+    }
 }
 
-.container > img {
+#profile-img {
     position: relative;
     top:50%;
     left:50%;
@@ -176,6 +195,7 @@ html, body {
 }
 .close-button {
     color: black;
+    font-size: 8vmax;
     background: linear-gradient(to bottom, transparent 0%, transparent 49%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 100%);
     border-radius: 0 0 50% 50%;
     position: absolute;
@@ -184,15 +204,42 @@ html, body {
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
-    z-index: 4;
+}
+@media screen and (orientation: portrait) {
+    .close-button {
+        font-size: 15vmax;
+    }
 }
 .title-font {
     text-align: center;
-    font-size: 3em;
+    font-size: 6vmax;
     top: 50%;
     left: 50%;
     white-space: nowrap;
     font-family: 'Impact', 'arial black';
     margin: 0;
     padding: 0;
+}
+#project-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: center;
+}
+.project-box {
+    display: flex;
+    align-items: center;
+    background-color: rgb(212, 240, 255);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+    height: 80px;
+}
+.project-imgarea {
+    width: 30%;
+    margin-right: 2px;
+}
+.project-textarea {
+    text-align: left;
 }

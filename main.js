@@ -49,14 +49,14 @@ function draw() {
                 onlyPopBGFont("#profile-font");
             }
         } else if (winMouseX > triangle.top.x && winMouseY < triangle.right.y) {
-            if (screenStatus == "RIGHT")
+            if (screenStatus == "RIGHT" || screenStatus == "BOTTOM")
                 cursor(ARROW);
             else {
                 cursor(HAND);
                 onlyPopBGFont("#project-font");
             }
         } else if (winMouseX < triangle.top.x && winMouseY < triangle.left.y) {
-            if (screenStatus == "LEFT")
+            if (screenStatus == "LEFT" || screenStatus == "BOTTOM")
                 cursor(ARROW);
             else
                 cursor(HAND);
@@ -103,7 +103,7 @@ function clickAction() {
                 "opacity": "1",
             });
             screenStatus = "BOTTOM";
-        } else if (winMouseX > triangle.top.x && winMouseY < triangle.right.y) {
+        } else if (winMouseX > triangle.top.x && winMouseY < triangle.right.y && screenStatus != "BOTTOM") {
             // console.log("right");
             $("#triangle").animate({
                 "top": "80%",
@@ -118,7 +118,7 @@ function clickAction() {
                 "opacity": "1"
             });
             screenStatus = "RIGHT";
-        } else if (winMouseX < triangle.top.x && winMouseY < triangle.left.y) {
+        } else if (winMouseX < triangle.top.x && winMouseY < triangle.left.y && screenStatus != "BOTTOM") {
             // console.log("left");
             $("#triangle").animate({
                 "top": "80%",
