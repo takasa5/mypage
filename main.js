@@ -30,8 +30,19 @@ function setup() {
     cnv.mouseClicked(clickAction);
     triangle = new Triangle();
     screenStatus = "DEFAULT";
-    $(".container").height($(".modal").height() - $(".title-font").height() - 0.5 * $(".close-button").height());
+    $(".project-box").hover(mouseIn, mouseOut);
 }
+function mouseIn() {
+    $(this).children(".project-textarea").fadeOut(100);
+    $(this).children(".project-imgarea").delay(100).animate({"width": "100%"}, 100);
+    $(this).children(".project-back").delay(100).fadeIn(200);
+}
+function mouseOut() {
+    $(this).children(".project-imgarea").animate({"width": "30%"}, 200);
+    $(this).children(".project-textarea").delay(100).fadeIn(100);
+    $(this).children(".project-back").fadeOut(200);
+}
+
 function draw() {
     if (checkInTriangle(winMouseX, winMouseY)) {
         if (screenStatus == "DEFAULT") {
@@ -71,7 +82,6 @@ function windowResized() {
     cnv.style("width", windowWidth + "px");
     cnv.style("height", windowHeight + "px");
     triangle.refresh();
-    $(".container").height($(".modal").height() - $(".title-font").height() - 0.5 * $(".close-button").height());
 }
 
 function clickAction() {

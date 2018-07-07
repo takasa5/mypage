@@ -76,27 +76,26 @@ html, body {
     }
     .container {
         width: 80%;
+        height: 80%;
+        position: relative;
         display: grid;
-        position: absolute;
-        left:50%;
-        top: 50%;
-        -ms-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
         grid-gap: 10px;
-        margin-top: 15px;
+        /* margin-top: 15px; */
         overflow: auto;
     }
     #profile-container {
         grid-template-columns: 1fr 2fr;
     }
     #project-container {
-        grid-gap: 20px;
+        grid-gap: 5%;
         grid-template-columns: 1fr 1fr;
     }
     .project-box {
         width: 45%;
+        height: 20%;
         font-size: 2vmax;
     }
     
@@ -116,11 +115,9 @@ html, body {
     .container {
         width: 90%;
         display: grid;
-        position: absolute;
-        left:50%;
-        -ms-transform: translateX(-50%);
-        -webkit-transform: translateX(-50%);
-        transform: translateX(-50%);
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
         grid-gap: 8px;
         overflow: auto;
@@ -137,7 +134,8 @@ html, body {
         grid-template-rows: 80px 80px;
     }
     .project-box {
-        width: 95%;
+        width: 95vw;
+        height: 80px;
         margin: auto;
     }
 }
@@ -228,18 +226,52 @@ html, body {
     justify-content: center;
 }
 .project-box {
+    text-decoration: none;
+    color: black;
     display: flex;
     align-items: center;
     background-color: rgb(212, 240, 255);
     padding: 5px;
     margin: 5px;
     border-radius: 10px;
-    height: 80px;
 }
 .project-imgarea {
     width: 30%;
-    margin-right: 2px;
+    height: 95%;
+    margin: 5px;
 }
 .project-textarea {
     text-align: left;
+}
+.project-box.empty {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.project-back {
+    display: none;
+    width: 45%;
+    height: 20%;
+    margin-left: auto;
+    font-weight: bold;
+    margin-right: auto;
+    position: absolute;
+    font-size: 4vmax;
+    vertical-align: middle;
+    /* -webkit-text-stroke: 1px white; */
+    text-shadow: 1px 1px 0 #d4f0ff;
+}
+@media screen and (orientation: landscape) {
+    .project-back {
+        width: 45%;
+        height: 20%;
+    }
+}
+@media screen and (orientation: portrait) {
+    .project-back {
+        width: 95vw;
+        height: 80px;
+    }
 }
