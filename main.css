@@ -124,10 +124,10 @@ html, body {
     }
     #profile-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 10vh 1fr;
+        grid-template-rows: 20vh 1fr;
     }
     #profile-img {
-        height: 10vh;
+        height: 20vh;
     }
     #project-container {
         grid-template-columns: 1fr;

@@ -32,6 +32,8 @@ function setup() {
     screenStatus = "DEFAULT";
     $(".project-box").hover(mouseIn, mouseOut);
 }
+
+// project-boxへのhover処理
 function mouseIn() {
     $(this).children(".project-textarea").fadeOut(100);
     $(this).children(".project-imgarea").delay(100).animate({"width": "100%"}, 100);
@@ -39,7 +41,7 @@ function mouseIn() {
 }
 function mouseOut() {
     $(this).children(".project-imgarea").animate({"width": "30%"}, 200);
-    $(this).children(".project-textarea").delay(100).fadeIn(100);
+    $(this).children(".project-textarea").delay(200).fadeIn(100);
     $(this).children(".project-back").fadeOut(200);
 }
 
@@ -181,6 +183,32 @@ function onClose() {
     });
     replaceModal(screenStatus);
     screenStatus = "DEFAULT";
+}
+
+function onClickProject(box) {
+    offset = $(box).offset();
+    // project-boxの移動
+    $(box).clone(true).attr("id", "boxtmp").appendTo($(box).parent().parent());
+    // リンクの削除
+    $("#boxtmp").wrapInner($("<div class='project-box' id='boxclone'></div>"));
+    $("#boxclone").unwrap();
+    // ホバー解除
+    $("#boxclone").unbind("mouseenter").unbind("mouseleave");
+    // アニメーション
+    $("#boxclone").css({
+        "position": "absolute",
+        "-ms-transform": "translate(-50%,-50%)",
+        "-webkit-transform": "translate(-50%,-50%)",
+        "transform": "translate(-50%,-50%)",
+    });
+    $("#boxclone").css(offset);
+    $("#boxclone").animate({
+        "top": "50%",
+        "left": "50%",
+        "width": "90vw",
+        "height": "90vh",
+        "margin": "0"
+    }, 400);
 }
 
 function checkInTriangle(x, y) {
