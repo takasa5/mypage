@@ -1,71 +1,41 @@
-<!DOCTYPE html>
+<!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>takasa5</title>
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="lib/jquery-3.2.1.min.js"></script>
-    <script src="lib/p5.min.js"></script>
-    <script src="lib/p5.dom.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script src="main.js"></script>
 </head>
 <body>
-    <div id="bg">
-        <div class="bg-image" style="width: 100vw; height: 100vh"></div>
-        <p class="bg-font" id="profile-font">PROFILE</p>
-        <p class="bg-font" id="project-font">PROJECT</p>
-        <div id="triangle">
-            <img src="img/triangle5.svg" style="position:absolute;">
-            <p>T K S 5</p>
-        </div>
-    </div>
-    <div class="modal" id="profile-modal">
-        <p class="title-font">PROFILE</p>
-        <div class="container" id="profile-container">
-            <img id="profile-img" src="img/triangle5.svg">
-            <div style="text-align: left;">
-                <b>高砂(takasago)</b><br>
-                イメージカラー<div style="display: inline;background-color: black;color: #d4f0ff">#d4f0ff</div>の三角形<br>
-                趣味は散歩、音楽を聴くこと、写真を撮ること(全部同時にできる)<br>
-                <a href="https://twitter.com/takasa_five" target="_blank"><i class="fab fa-twitter-square fa-lg fa-fw" style="color:#55acee"></i>@takasa_five</a><br>
-                <a href="https://github.com/takasa5" target="_blank"><i class="fab fa-github-square fa-lg fa-fw" style="color:#24292e"></i>takasa5</a><br>
-                <a href="https://takasa-5.blogspot.com/" target="_blank"><i class="fab fa-blogger fa-lg fa-fw" style="color: #fe6602"></i>takasa-5</a>
+    <article id="article-1">
+        
+    </article>
+    <article id="article-2">
+
+    </article>
+    <article id="article-3">
+        <div class="container" id="container-1">
+            <div class="item-1">
+                <div id="profileArea" class="centering">
+                    <p>TKS5</p>
+                    高砂 takasago △<br>
+                    趣味は聴くこと、歩くこと、撮ること、整うこと、作ること
+                    <div id="links">
+                            <a href="https://twitter.com/takasa_five" target="_blank"><i class="fab fa-twitter fa-lg" style="color:#55acee"></i></a>
+                            <a href="https://github.com/takasa5" target="_blank"><i class="fab fa-github fa-lg" style="color:#24292e"></i></a>
+                            <a href="https://takasa-5.blogspot.com/" target="_blank"><i class="fab fa-blogger fa-lg" style="color: #fe6602"></i></a>
+                    </div>
+                    <br>
+                    <a href="javascript:void(0);" onclick="onProducts();" id="productsLink">PRODUCTS</a>
+                </div>
+            </div>
+            <div class="item-1">
+                <div id="imageArea" class="centering"></div>
+                <img id="profileImage" class="centering" src="img/triangle5.svg">
             </div>
         </div>
-        <a href="javascript:void(0);" onclick="onClose();"><i class="far fa-times-circle close-button"></i></a>
-    </div>
-    <div class="modal" id="project-modal">
-        <p class="title-font">PROJECT</p>
-        <div class="container" id="project-container">
-            <a href="javascript:void(0);" onclick="onClickProject(this);" class="project-box">
-                <div class="project-back">michibiki</div>
-                <img class="project-imgarea" src="img/michibiki.svg">
-                <div class="project-textarea">
-                <b>michibiki</b><br>
-                画像から星座検出
-                </div>
-            </a>
-            <a href="javascript:void(0);" onclick="onClickProject(this);" class="project-box">
-                <div class="project-back">Orbit</div>
-                <img class="project-imgarea" src="img/orbit.svg">
-                <div class="project-textarea">
-                <b>Orbit</b><br>
-                軌道でリズム生成
-                </div>
-            </a>
-            <a href="javascript:void(0);" onclick="onClickProject(this);" class="project-box">
-                <div class="project-back">dooune</div>
-                <img class="project-imgarea" src="img/dooune.svg">
-                <div class="project-textarea">
-                <b>dooune</b><br>
-                らくがき+音楽
-                </div>
-            </a>
-            <div class="project-box empty">
-            </div>
-        </div>
-        <a href="javascript:void(0);" onclick="onClose();"><i class="far fa-times-circle close-button"></i></a>
-    </div>
+    </article>
 </body>
 </html>
