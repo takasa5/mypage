@@ -16,6 +16,7 @@ a {
 
 h2, figure {
     margin: 0;
+    margin-bottom: 5px;
 }
 
 figcaption {
