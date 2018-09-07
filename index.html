@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>takasa5</title>
     <link rel="stylesheet" type="text/css" media="screen" href="main.css?b" />
-    <script src="lib/jquery-3.2.1.min.js"></script>
+    <!-- <script src="lib/jquery-3.2.1.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script src="main.js"></script>
     <link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
@@ -38,7 +39,7 @@
             <div class="item-3">
                 <h2>概要</h2>
                 <figure>
-                    <img src="img/orbit_scr.png" style="width: 100%">
+                    <img src="img/orbit_scr.png">
                     <figcaption>スクリーンショット</figcaption>
                 </figure>
                 画面上がプレイエリアで、画面下が操作用のボタン等。
@@ -74,6 +75,10 @@
             </div>
             <div class="item-3">
                 <h2>概要</h2>
+                <figure>
+                    <img src="img/stardust_result.JPG">
+                    <figcaption>出力</figcaption>
+                </figure>
                 画像処理プログラムと独自の星座データからなる。画像処理は効率化・高速化に注力しているが、専ら問題となるのは星座データの少なさである。
                 特にディープラーニング等をしているわけではないので一つの星座につき数例あれば手作業でデータが作れるのだが、検索などでは意外とあまり見つからない。
                 そこで、広くプログラムを使用可能としデータの提供を期待する「みちびき」の開発へとつながる。<br>
@@ -84,6 +89,47 @@
                 <ul>
                     <li><a href="https://github.com/takasa5/stardust" target="_blank">GitHub(stardust)</a></li>
                     <li><a href="https://github.com/takasa5/michibiki" target="_blank">GitHub(みちびき)</a></li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="michibiki" style="display: none">
+            <div class="item-3">
+                <img src="img/michibiki.svg" class="productIcon">
+                <div class="productTitle">みちびき</div><br>
+                2018/01~
+            </div>
+            <div class="item-3">
+                <h2>目的</h2>
+                星座検出プログラムstardustを作ってみたのはいいものの、手元に星座の写真がなくて種類が増えない。
+                そこで、広くプログラムを使用可能としユーザからのデータの提供を期待するもの。<br>
+                LINE botとWebアプリケーションの2種類がある。
+            </div>
+            <div class="item-3">
+                <h2>言語</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>JavaScript(jQuery)</li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+            <div class="item-3">
+                <h2>概要</h2>
+                <figure>
+                    <img src="img/michibiki_web_src.png">
+                    <figcaption>スクリーンショット(Web)</figcaption>
+                </figure>
+                LINE botでもWebアプリケーションでも、手順をわかりやすくすることに努めた。
+                星空の画像はサイズが大きいことが多いので、サーバとの送受信に時間がかかる。
+                いかに素早く処理をするかということが課題になっている。
+                その他さまざまな課題(主に無料サーバを使っているせい)によりWebは未公開だが、LINE botは公開まで達成。
+            </div>
+            <div class="item-3">
+                <h2>外部リンク</h2>
+                 <ul>
+                    <li><a href="https://github.com/takasa5/michibiki" target="_blank">GitHub(みちびき)</a></li>
+                    <li><a href="https://github.com/takasa5/stardust" target="_blank">GitHub(stardust)</a></li>
+                    <li><a href="https://line.me/R/ti/p/%40njl8027x" target="_blank">LINE bot</a></li>
                 </ul>
             </div>
             <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
