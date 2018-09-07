@@ -7,17 +7,48 @@
     <script src="lib/jquery-3.2.1.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script src="main.js"></script>
-    <link rel="icon" sizes="any" href="/img/triangle5.svg" type="image/svg+xml">
+    <link rel="icon" sizes="any" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
     <article id="article-1">
-        
+        <div class="container uc" style="display: none">
+            Underconstraction.<br>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
     </article>
     <article id="article-2">
-        <div class="container">
-            <div class="item-2" id="products" style="display: none;">
-                aaa
+        <div class="container uc" style="display: none">
+            Underconstraction.<br>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="products" style="display: none;">
+            <div class="item-2">
+                <div class="productTitle">Orbit</div><br>
+                2017/08~<br>
+                "軌道"でリズムを作るWebアプリ。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="orbit" class="hole">MORE</a>
             </div>
+            <div class="item-2">
+                <img src="img/michibiki.svg" class="productIcon">
+                <div class="productTitle">みちびき</div><br>
+                2017/10~<br>
+                星空の写真から星座を検出。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="michibiki" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <div class="productTitle">Dooune</div><br>
+                2018/06~<br>
+                落書きから生まれる音。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="dooune" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <img src="img/pudding.svg" class="productIcon">
+                <div class="productTitle">Pudding</div><br>
+                2018/08~<br>
+                LINEグループの拡張。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="pudding" class="hole">MORE</a>
+            </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
         </div>
     </article>
     <article id="article-3">
@@ -43,5 +74,6 @@
             </div>
         </div>
     </article>
+    <div id="leftSide"></div>
 </body>
 </html>
