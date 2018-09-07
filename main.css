@@ -14,6 +14,15 @@ a {
     color: black;
 }
 
+h2, figure {
+    margin: 0;
+}
+
+figcaption {
+    width: 100%;
+    text-align: center;
+}
+
 /* @media screen and (orientation: portrait) {
     html, body {
         font-size: 1.2rem;
@@ -46,7 +55,7 @@ article {
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .26)
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, .26)
 }
 
 .container {
@@ -126,7 +135,7 @@ article {
     display: inline-block;
     background-color: #959CCC;
     padding: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .26) inset;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, .26) inset;
     top: 0;
     left: 0;
     margin: auto;
@@ -205,9 +214,48 @@ article {
     display: inline-block;
     font-size: 2em;
     vertical-align: middle;
+    font-weight: bold;
 }
 
 .uc {
     align-content: flex-start;
 }
 
+#article-1 > .container {
+    flex-direction: column;
+}
+
+.item-3 {
+    width: 30%;
+    max-height: 100%;
+    margin: 5px 5px 5px 10px;
+    padding: 5px 10px 5px 10px;
+    box-sizing: border-box;
+    position: relative;
+    background-color: white;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
+    word-wrap: break-word;
+}
+
+.item-3 a {
+    text-decoration: underline solid black;
+}
+.item-3 a:link {
+    color: #0000ff;
+    text-decoration-color: #0000ff;
+}
+.item-3 a:visited {
+    color: #000080;
+    text-decoration-color: #000080;
+}
+.item-3 a:hover {
+    color: #ff0000;
+    text-decoration-color: #ff0000;
+}
+@media screen and (orientation: portrait) {
+    /* 縦向きの場合のスタイル */
+    .item-3 {
+        width: 90%;
+    }
+}

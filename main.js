@@ -1,4 +1,5 @@
 $(function(){
+    buttonFlag = false;
 });
 
 function onHole(elm) {
@@ -9,14 +10,12 @@ function onHole(elm) {
 function openArticle(page, content) {
     var width = $(page).width() - 15;
     $(page).prev().find("#" + content).show();
-    console.log($(page).prev().find("#" + content).length);
     if ($(page).prev().find("#" + content).length == 0) {
         $(page).prev().find(".uc").show();
     }
-    console.log(page[0].id);
     if (page[0].id == "article-2") {
         $("#article-3").animate({
-            left: "-=15px"
+            left: "-=20px"
         });
         $("#leftSide").off("click");
     }
@@ -28,17 +27,23 @@ function openArticle(page, content) {
             $(page).prev().find(".back").css("z-index", "1");
         }
     });
-    // 左判定
+
     $("#leftSide").css("cursor", "pointer");
-    $("#leftSide").one("click", function() {
+    $("#leftSide").on("click", function() {
+        if (buttonFlag)
+            return false;
+        $("#leftSide").off("click");
+        buttonFlag = true;
         if (page[0].id == "article-3") {
             $(this).css("cursor", "default");
-        }else if (page[0].id != "article-3") {
-            $(page).next().animate({
-                left: "+=15px"
-            });
+        } else {
+            if (page[0].id == "article-2")
+                $(page).next().animate({
+                    left: "+=20px"
+                });
             $(this).one("click", function() {
                 $(this).css("cursor", "default");
+                $(page).find(".back").css("z-index", "auto");
                 var wid = $(page).next().width() - 15;
                 $(page).next().animate({
                     left: "+=" + wid + "px"
@@ -56,12 +61,16 @@ function openArticle(page, content) {
             complete: function() {
                 // $(page).prev().find("#" + content).hide();
                 $(page).prev().children().hide();
+                buttonFlag = false;
             }
         });
     });
 }
 
 function onBack(elm) {
+    if (buttonFlag)
+        return false;
+    buttonFlag = true;
     var page = $(elm).parents("article");
     var width = $(page).next().width() - 15;
 
@@ -71,13 +80,16 @@ function onBack(elm) {
     }, {
         complete: function() {
             $(page).children().hide();
+            buttonFlag = false;
         }
     });
-    if (page[0].id == "article-1") {
+    $("#leftSide").off("click");
+    if (page[0].id == "article-2")
+        $("#leftSide").css("cursor", "default");
+    else if (page[0].id == "article-1") {
         $("#article-3").animate({
-            left: "+=15px"
+            left: "+=20px"
         });
-        $("#leftSide").off("click");
         $("#leftSide").one("click", function() {
             $("#article-2").find(".back").css("z-index", "auto");
             var wid = $("#article-3").width() - 15;
