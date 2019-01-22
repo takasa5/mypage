@@ -9,6 +9,7 @@ function onHole(elm) {
 
 function openArticle(page, content) {
     var width = $(page).width() - 15;
+    console.log(page, content);
     $(page).prev().find("#" + content).show();
     if ($(page).prev().find("#" + content).length == 0) {
         $(page).prev().find(".uc").show();
