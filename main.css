@@ -24,8 +24,8 @@
 }
 
 .card {
-    min-width: 300px;
-    max-width: 90%;
+    min-width: 310px;
+    max-width: 95%;
 }
 
 .myname {
@@ -39,6 +39,11 @@
     text-align: center;
 }
 
-.buefy {
-    height: 1em;
+.bulma {
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+.profile {
+    margin-bottom: 10px;
 }
