@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>takasa5</title>
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="https://unpkg.com/vue"></script>
+    <!-- <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css"> -->
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
-    <script src="main.js"></script>
     <link rel="icon" sizes="any" href="favicon.svg" type="image/svg+xml">
+    <script src="works.js"></script>
 </head>
 <body>
-    <section class="page" style="background-color: white;">
+    <section id="v-dom" class="page" style="background-color: white;">
         <img class="bgimage" src="img/aqa.JPG">
-        <div class="columns centering">
-            <div class="column">
+        <div class="container page">
+        <div class="level is-mobile">
+            <div class="level-item" v-if="!thinWidth || (thinWidth && !show)">
                 <div class="card">
                     <div class="card-content">
                         <div class="media">
@@ -26,16 +29,21 @@
                                 </figure>
                             </div>
                             <div class="media-content myname">
+                            <div class="content">
                                 <p class="title is-4">@takasa5</p>
                                 <p class="subtitle is-6">HN: 高砂(たかさご)</p>
+                            </div>
                             </div>
                         </div>
                         <div class="profile">
                             Keio Univ. M1<br>
-                            <b>Studying:</b> Human-Agent Interaction<br>
+                            <b>Studying:</b> Intention inference<br>
                             <b>Love:</b> Music, Sauna, Water, Sunset<br>
                         </div>
-                        <button class="button is-fullwidth">Show works</button>
+                        <button class="button is-fullwidth" @click="show = !show">
+                            <div v-show="!show">Show works</div>
+                            <div v-show="show">Hide works</div>
+                        </button>
                     </div>
                     <footer class="card-footer">
                         <a class="card-footer-item" href="https://twitter.com/takasa_five" target="_blank">
@@ -50,17 +58,56 @@
                     </footer>
                 </div>
             </div>
-            <div class="column">
+            <transition name="fade" mode="out-in">
+            <div class="level-item" v-if="show">
                 <div class="card">
                     <div class="card-content">
-                        <p class="title">
-                            dummy
-                        </p>
-                        <div>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        </div>
+                        <ul>
+                        <transition name="fade" mode="out-in">
+                        <li v-for="(work, index) in works" :key="work.title" v-if="currentPage == index + 1">
+                            <div class="media">
+                                <div v-if="work.icon" class="media-left">
+                                    <figure class="image is-64x64">
+                                    <img :src="work.icon">
+                                    </figure>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p class="title is-4">{{ work.title }}</p>
+                                        <p class="subtitle is-6">{{ work["abstract-en"] }}</p>
+                                    </div>
+                                </div>
+                                <div class="media-right" v-if="thinWidth">
+                                    <button class="delete" @click="show = !show"></button>
+                                </div>
+                            </div>
+                            <img :src="work.screenshot" style="width: 100%; margin: 6px 0;">
+                            <div class="tags">
+                                <span v-for="lang in work.languages" class="tag is-info is-rounded">{{ lang }}</span>
+                            </div>
+                        </li>
+                        </transition>
+                        </ul>
                     </div>
+                    <footer class="card-footer pagination is-rounded is-centered is-small" role="navigation" aria-label="pagination">
+                        <ul class="pagination-list card-footer-item">
+                            <li v-for="(work, index) in works">
+                                <a class="pagination-link"
+                                    :class="{ 'is-current': currentPage == index + 1 }"
+                                    @click="currentPage = index + 1"
+                                    v-show="index == 0 || currentPage == index || currentPage == index + 1 || currentPage == index + 2 || index == works.length - 1">
+                                    {{ index + 1 }}
+                                </a>
+                                <span class="pagination-ellipsis"
+                                      v-show="(index == 0 && currentPage > 3) || (index == works.length - 2 && works.length - 2 > currentPage)">
+                                      &hellip;
+                                </span>
+                            </li>
+                        </ul>
+                    </footer>
                 </div>
+            </div>
+            </transition>
             </div>
         </div>
         <footer class="my-footer">
@@ -69,5 +116,6 @@
             </p>
         </footer>
     </section>
+    <script src="main.js"></script>
 </body>
 </html>
