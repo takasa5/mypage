@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>takasa5</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css?b" />
+    <!-- <script src="lib/jquery-3.2.1.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <script src="main.js"></script>
+    <link rel="icon" sizes="any" href="favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <article id="article-1">
+        <div class="container uc" style="display: none">
+            Underconstraction.<br>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="orbit" style="display: none">
+            <div class="item-3">
+                <div class="productTitle">Orbit</div><br>
+                2017/08~
+            </div>
+            <div class="item-3">
+                <h2>目的</h2>
+                自分が、音楽は好きだが弾くことができないので、かんたんに音を作れればいいなと思って制作した。
+                もともとはTkinterを用いたデスクトップアプリケーションで作っていたが、見た目が気に入らなかったことと、
+                より多くの人に見てもらうためにはWebで作るのがよいと思い、Webアプリケーションとして作り直した。
+            </div>
+            <div class="item-3">
+                <h2>言語</h2>
+                <ul>
+                    <li>JavaScript(jQuery)</li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+            <div class="item-3">
+                <h2>概要</h2>
+                <figure>
+                    <img src="../img/orbit_scr.png">
+                    <figcaption>スクリーンショット</figcaption>
+                </figure>
+                画面上がプレイエリアで、画面下が操作用のボタン等。
+                プレイエリアに「オービット」や「プラネット」を置いていく。
+                再生ボタンを押すとオービットが回転し、プラネットと衝突することで音が鳴る。
+                オービットの速度や半径、位置を変えることで変わっていくリズムを楽しむ。
+            </div>
+            <div class="item-3">
+                <h2>外部リンク</h2>
+                <ul>
+                    <li><a href="https://takasa5-orbit.herokuapp.com/" target="_blank">Orbit</a></li>
+                    <li><a href="https://github.com/takasa5/orbit" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="stardust" style="display: none">
+            <div class="item-3">
+                <div class="productTitle">stardust</div><br>
+                2017/10~
+            </div>
+            <div class="item-3">
+                <h2>目的</h2>
+                星を見るのが好きでよく天体観測に行っていたが、星座の知識はなく、なかなか星座を探すのが難しかった。
+                実際に見ているときは、スマートフォンをかざせば大体その辺にある星座を表示してくれるアプリを使えばよかったが、
+                撮影した写真については使えない。そこで、写真を入力とし、星座を探してくれるプログラムを作ろうと思い立った。
+            </div>
+            <div class="item-3">
+                <h2>言語</h2>
+                <ul>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div class="item-3">
+                <h2>概要</h2>
+                <figure>
+                    <img src="../img/stardust_result.JPG">
+                    <figcaption>出力</figcaption>
+                </figure>
+                画像処理プログラムと独自の星座データからなる。画像処理は効率化・高速化に注力しているが、専ら問題となるのは星座データの少なさである。
+                特にディープラーニング等をしているわけではないので一つの星座につき数例あれば手作業でデータが作れるのだが、検索などでは意外とあまり見つからない。
+                そこで、広くプログラムを使用可能としデータの提供を期待する「みちびき」の開発へとつながる。<br>
+                ディープラーニングの使用は検討中。
+            </div>
+            <div class="item-3">
+                <h2>外部リンク</h2>
+                <ul>
+                    <li><a href="https://github.com/takasa5/stardust" target="_blank">GitHub(stardust)</a></li>
+                    <li><a href="https://github.com/takasa5/michibiki" target="_blank">GitHub(みちびき)</a></li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="michibiki" style="display: none">
+            <div class="item-3">
+                <img src="../img/michibiki.svg" class="productIcon">
+                <div class="productTitle">みちびき</div><br>
+                2018/01~
+            </div>
+            <div class="item-3">
+                <h2>目的</h2>
+                星座検出プログラムstardustを作ってみたのはいいものの、手元に星座の写真がなくて種類が増えない。
+                そこで、広くプログラムを使用可能としユーザからのデータの提供を期待するもの。<br>
+                LINE botとWebアプリケーションの2種類がある。
+            </div>
+            <div class="item-3">
+                <h2>言語</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>JavaScript(jQuery)</li>
+                    <li>HTML</li>
+                </ul>
+            </div>
+            <div class="item-3">
+                <h2>概要</h2>
+                <figure>
+                    <img src="../img/michibiki_web_src.png">
+                    <figcaption>スクリーンショット(Web)</figcaption>
+                </figure>
+                LINE botでもWebアプリケーションでも、手順をわかりやすくすることに努めた。
+                星空の画像はサイズが大きいことが多いので、サーバとの送受信に時間がかかる。
+                いかに素早く処理をするかということが課題になっている。
+                その他さまざまな課題(主に無料サーバを使っているせい)によりWebは未公開だが、LINE botは公開まで達成。
+            </div>
+            <div class="item-3">
+                <h2>外部リンク</h2>
+                 <ul>
+                    <li><a href="https://github.com/takasa5/michibiki" target="_blank">GitHub(みちびき)</a></li>
+                    <li><a href="https://github.com/takasa5/stardust" target="_blank">GitHub(stardust)</a></li>
+                    <li><a href="https://line.me/R/ti/p/%40njl8027x" target="_blank">LINE bot</a></li>
+                </ul>
+            </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="dooune" style="display: none">
+            <div class="item-3">
+                <div class="productTitle">Dooune</div>
+                <br>2018/06~
+            </div>
+            <div class="item-3">
+                <h2>目的</h2>
+                Orbit同様、かんたんな音作りができることを目指して作り始める。
+                様々なJavaScriptライブラリを使ってみたかったのも目的の一つ。
+            </div>
+            <div class="item-3">
+                <h2>言語</h2>
+                <ul>
+                    <li>JavaScript(jQuery)</li>
+                </ul>
+            </div>
+            <div class="item-3">
+                <h2>概要</h2>
+                <figure>
+                    <img src="../img/dooune_scr_2.png">
+                    <figcaption>スクリーンショット(開発中)</figcaption>
+                </figure>
+                画面全体がプレイエリアで、タッチやドラッグで線が描ける。
+                円や四角形を描くと対応する図形が画面に出現し、物理シミュレーションで落ちたり跳ねたりする。
+                地面や図形同士でぶつかると、音が出る……という、「落書き+音が出る」な単純な仕組み。
+                Web上で多数の音を同時に再生すると音が割れる問題があり、なかなかうまくいかない。
+                そもそもOrbitでもそうだったが、簡単にきれいな音が出せるシステムを作るためには音楽の才能が必要だと思う。
+                現状、あんまり心地よくない音しか出せない。
+                </div>
+            <div class="item-3">
+                <h2>外部リンク</h2>
+                <ul>
+                    <li><a href="https://github.com/takasa5/dooune" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" id="pudding" style="display: none">
+                <div class="item-3">
+                    <div class="productTitle">Pudding</div>
+                    <br>2018/08~
+                </div>
+                <div class="item-3">
+                    <h2>目的</h2>
+                    作った動機としてはLINE BOOT AWARD 2018に応募するため。
+                    あと、"プリクラ"は何故まだ存在するのかという疑問をぶつけた。
+                </div>
+                <div class="item-3">
+                    <h2>言語</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript(jQuery)</li>
+                        <li>HTML</li>
+                    </ul>
+                </div>
+                <div class="item-3">
+                    <h2>概要</h2>
+                    <figure>
+                            <img src="../img/pudding_scr.JPG">
+                            <figcaption>スクリーンショットと説明</figcaption>
+                        </figure>
+                    SNOW等のアプリを筆頭に、「盛る」ことはスマホだけでできるようになってきた。では"プリクラ"は何故まだ存在するのか？
+                という疑問に対し、僕は「みんなで落書きすることが楽しいからだ」と結論を出した。
+                Puddingは、<b>撮った写真にみんなで落書きできる</b>Webサイトである。
+                形式としては、「プリグル(Pudding + Group)」というLINE botの形で提供(前述の通り賞に応募する目的と、実装が楽に感じたため)。
+                使い方は、LINEのグループにプリグルを追加し、所定のコマンドを入力するだけ(詳しくは関連リンクの解説ブログを参照)。
+                画像の上で「お絵かきチャット」ができるように実装するだけだが、canvas要素の仕様、絵チャ実装のためのクライアント・サーバの要件に関して苦労した。
+                </div>
+                <div class="item-3">
+                    <h2>外部リンク</h2>
+                    <ul>
+                        <li><a href="https://takasa-5.blogspot.com/2018/09/line-bot.html" target="_blank">解説ブログ</a></li>
+                        <li><a href="https://www.line-community.me/awards/workdetail/5b8f6e75851f74fd6e0142eb" target="_blank">賞エントリーページ</a></li>
+                        <li><a href="https://line.me/R/ti/p/%40sjd1151b" target="_blank">LINE bot</a></li>
+                    </ul>
+                </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="radome" style="display: none">
+                <div class="item-3">
+                    <div class="productTitle">RADOME</div>
+                    <br>2018/08~
+                </div>
+                <div class="item-3">
+                    <h2>目的</h2>
+                    作った動機としてはLINE BOOT AWARD 2018に応募するため。
+                </div>
+                <div class="item-3">
+                    <h2>言語</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>JavaScript(jQuery)</li>
+                        <li>HTML</li>
+                    </ul>
+                </div>
+                <div class="item-3">
+                    <h2>概要</h2>
+                    <figure>
+                            <img src="../img/radome_scr.JPG">
+                            <figcaption>RADOMEの概念</figcaption>
+                    </figure>
+                    新しい匿名チャットの形が思い浮かんだのでLINE botで手早く作った(作成期間一週間)。
+                    RADOMEでは、半径を決めて自分を中心とする範囲を設定でき、その範囲内の人だけが参加できるチャットが可能である。
+                    待ち合わせとかライブ会場とかであったら面白そうだなと考えているが、こういった類のものは一定数以上の人に使ってもらわないとよくわからないので厳しい。
+                    新しく学んだのはWeb上での位置情報取得くらいか。
+                </div>
+                <div class="item-3">
+                    <h2>外部リンク</h2>
+                    <ul>
+                        <li><a href="https://takasa-5.blogspot.com/2018/10/line-bot-2.html" target="_blank">解説ブログ</a></li>
+                        <li><a href="https://www.line-community.me/awards/workdetail/5bb429b4851f74632343cc5d" target="_blank">賞エントリーページ</a></li>
+                        <li><a href="https://line.me/R/ti/p/%40tli5989n" target="_blank">LINE bot</a></li>
+                    </ul>
+                </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="sauna" style="display: none">
+            <div class="item-3">
+                <h2>概要</h2>
+                最近若者に流行っている「整う」というアレ。「サウナ」と便宜的に呼びはするもののその本質はサウナそのものではなく、
+                サウナ→水風呂→外気浴を自分に合った時間行うことによるトリップ状態(通称「整う」)。
+                お金がかからず、気持ちがよく、健康的(たぶん)なので、おすすめの趣味である。
+                なのに人を誘うと「暑いの苦手だから」「長く入れないから」と断られるのは不本意である。そうではないのだ。
+                このページでは、体験したサウナとそこへのコメントを記録したい。
+            </div>
+            <div class="item-3">
+                <h2>サウナセンター大泉(鶯谷)</h2>
+                2018/03/10, 04/22<br>
+                高砂サウナ歴原点にして頂点。クールダウンルームという冷蔵庫みたいな部屋がありこれが最高に整う。
+            </div>
+            <div class="item-3">
+                <h2>萩の湯(鶯谷)</h2>
+                2018/04/22<br>
+                湯の種類が豊富で良い。施設の大衆ウケするきれいさのわりにサウナ、水風呂、椅子の配置や給水ポイントがサウナー向けっぽい。
+            </div>
+            <div class="item-3">
+                <h2>清水湯(武蔵小山)</h2>
+                2018/05/05<br>
+                縦長な形でせまい。露天風呂の風通しが良くて気持ちよかった記憶。
+            </div>
+            <div class="item-3">
+                <h2>湯けむりの庄(綱島)</h2>
+                2018/07/15<br>
+                サウナがめっちゃ広くて高温。塩サウナもある(高砂は嫌い)。露天風呂スペースは広く、寝湯がとてもリラックスでき良い。
+            </div>
+            <div class="item-3">
+                <h2>美肌の湯(埼玉県北本市)</h2>
+                2018/09/15<br>
+                ここも寝湯があって良かった。2019年1月に閉店しちゃうらしい。
+            </div>
+            <div class="item-3">
+                <h2>星音の湯(秩父)</h2>
+                2018/09/16<br>
+                施設はりっぱだがサウナの温度が低くて残念。夜は星が見えるというウワサがある。
+            </div>
+            <div class="item-3" style="margin-bottom: 20px;">
+                <h2>そしがや温泉21(祖師谷)</h2>
+                2018/09/23<br>
+                プールがある。サウナ、ミストサウナ、冷凍サウナがあるがどれも狭く、整いに行くよりプールを楽しむ温泉。
+            </div>
+            <br>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+    </article>
+    <article id="article-2">
+        <div class="container uc" style="display: none">
+            Underconstraction.<br>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="products" style="display: none;">
+            <div class="item-2">
+                <div class="productTitle">Orbit</div><br>
+                2017/08~<br>
+                "軌道"でリズムを作るWebアプリ。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="orbit" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <div class="productTitle">stardust</div><br>
+                2017/10~<br>
+                星空の写真から星座を検出。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="stardust" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <img src="../img/michibiki.svg" class="productIcon">
+                <div class="productTitle">みちびき</div><br>
+                2018/01~<br>
+                stardustを誰にでも使いやすく。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="michibiki" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <div class="productTitle">Dooune</div><br>
+                2018/06~<br>
+                落書きから生まれる音楽。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="dooune" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <img src="../img/pudding.svg" class="productIcon">
+                <div class="productTitle">Pudding</div><br>
+                2018/08~<br>
+                LINEグループの拡張。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="pudding" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <img src="../img/radome.svg" class="productIcon">
+                <div class="productTitle">RADOME</div><br>
+                2018/10~<br>
+                LINEで距離依存匿名チャット。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="radome" class="hole">MORE</a>
+            </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+        <div class="container" id="hobbies" style="display: none">
+            <div class="item-2">
+                <h2><i class="fas fa-music fa-fw" style="color: black"></i>音楽</h2>
+                聴きます。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="music" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <h2><i class="fas fa-walking fa-fw" style="color: black"></i>散歩</h2>
+                歩きます。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="walking" class="hole">MORE</a>
+            </div>
+            <div class="item-2">
+                <h2><img src="../img/onsen.svg" style="height: 1em; vertical-align: middle; fill: black"> サウナ</h2>
+                整います。<br>
+                <a href="javascript:void(0);" onclick="onHole(this);" id="sauna" class="hole">MORE</a>
+            </div>
+            <a href="javascript:void(0);" onclick="onBack(this);" class="back">BACK</a>
+        </div>
+    </article>
+    <article id="article-3">
+        <div class="container">
+            <div class="item-1">
+                <div id="profileArea" class="centering">
+                    <p>TKS5</p>
+                    高砂 takasago △<br>
+                    大学4年生<br>
+                    <div id="links">
+                            <a href="https://twitter.com/takasa_five" target="_blank"><i class="fab fa-twitter fa-lg" style="color:#55acee"></i></a>
+                            <a href="https://github.com/takasa5" target="_blank"><i class="fab fa-github fa-lg" style="color:#24292e"></i></a>
+                            <a href="https://takasa-5.blogspot.com/" target="_blank"><i class="fab fa-blogger fa-lg" style="color: #fe6602"></i></a>
+                    </div>
+                    <br>
+                    <a href="javascript:void(0);" onclick="onHole(this);" id="products" class="hole">PRODUCTS</a>
+                    <a href="javascript:void(0);" onclick="onHole(this);" id="hobbies" class="hole">HOBBIES</a>
+                </div>
+            </div>
+            <div class="item-1">
+                <div id="imageArea" class="centering"></div>
+                <img id="profileImage" class="centering" src="../img/triangle5.svg">
+            </div>
+        </div>
+    </article>
+    <div id="leftSide"></div>
+</body>
+</html>

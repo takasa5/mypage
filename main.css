@@ -31,6 +31,10 @@ body, html {
     padding:0;
 }
 
+.media-content {
+    overflow: hidden;
+}
+
 
 .is-vertical-center {
     display: flex;
@@ -77,4 +81,8 @@ body, html {
     .fade-leave-to, .fade-leave-active {
         transition: none;
     }
+}
+
+.language-tags {
+    margin-bottom: 0 !important
 }

@@ -77,6 +77,23 @@ var works = [
         ]
     },
     {
+        "title": "My page v1",
+        "icon": "favicon.svg",
+        "start": "2018/06",
+        "abstract": "自己紹介ページ(v1)",
+        "abstract-en": "Self introduction page v1",
+        "languages": [
+            "jQuery"
+        ],
+        "screenshot": "img/mypage_v1_scr.png",
+        "links": [
+            {
+                "title": "takasa5",
+                "url": "v1/index.html"
+            }
+        ]
+    },
+    {
         "title": "Pudding",
         "icon": "img/pudding.svg",
         "start": "2018/08",
@@ -116,7 +133,7 @@ var works = [
         "links": [
             {
                 "title": "blog",
-                "irl": "https://takasa-5.blogspot.com/2018/10/line-bot-2.html"
+                "url": "https://takasa-5.blogspot.com/2018/10/line-bot-2.html"
             },
             {
                 "title": "LINE BOOT AWARDS",
@@ -127,5 +144,51 @@ var works = [
                 "url": "https://line.me/R/ti/p/%40tli5989n"
             }
         ]
-    }
+    },
+    {
+        "title": "YouTube thumbnail generator",
+        "icon": null,
+        "start": "2019/01",
+        "abstract": "YouTube悪質サムネイルジェネレータ",
+        "abstract-en": "YouTube shitty thumbnail generator",
+        "languages": [
+            "JavaScript"
+        ],
+        "screenshot": "img/thumbnail_generator_scr.png",
+        "links": [
+            {
+                "title": "☆YouTubeサムネイルジェネレータ☆",
+                "url": "https://takasa5.github.io/thumbnail_generator/"
+            },
+            {
+                "title": "GitHub",
+                "url": "https://github.com/takasa5/thumbnail_generator"
+            }
+        ]
+    },
+    {
+        "title": "SSBU room list",
+        "icon": "img/ssbu.jpg",
+        "start": "2019/02",
+        "abstract": "スマブラSPの部屋リスト",
+        "abstract-en": "Easy to use room list for SSBU player",
+        "languages": [
+            "Python",
+            "Vue.js"
+        ],
+        "screenshot": "img/roomlist_scr.png",
+        "links": []
+    },
+    {
+        "title": "My page v2",
+        "icon": "favicon.svg",
+        "start": "2019/04",
+        "abstract": "自己紹介ページ(v2)",
+        "abstract-en": "Self introduction page v2",
+        "languages": [
+            "Vue.js"
+        ],
+        "screenshot": "img/mypage_v2_scr.png",
+        "links": []
+    },
 ]
