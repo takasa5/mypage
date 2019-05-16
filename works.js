@@ -24,7 +24,7 @@ var works = [
         "links": [
             {
                 "title": "Orbit",
-                "url": "https://takasa5-orbit.herokuapp.com/"
+                "url": "https://takasa5.github.io/orbit/"
             },
             {
                 "title": "GitHub",
