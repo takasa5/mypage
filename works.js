@@ -45,6 +45,7 @@ var works = [
         "abstract-en": "Services of my \"stardust\"",
         "languages": [
             "Python",
+            "Flask",
             "jQuery"
         ],
         "screenshot": "img/michibiki_web_src.png",
@@ -101,6 +102,7 @@ var works = [
         "abstract-en": "Extension of LINE Group",
         "languages": [
             "Python",
+            "Flask",
             "jQuery"
         ],
         "screenshot": "img/pudding_scr.JPG",
@@ -127,6 +129,7 @@ var works = [
         "abstract-en": "Distance-based anonymous chat",
         "languages": [
             "Python",
+            "Flask",
             "jQuery"
         ],
         "screenshot": "img/radome_scr.JPG",
@@ -146,27 +149,6 @@ var works = [
         ]
     },
     {
-        "title": "YouTube thumbnail generator",
-        "icon": null,
-        "start": "2019/01",
-        "abstract": "YouTube悪質サムネイルジェネレータ",
-        "abstract-en": "YouTube shitty thumbnail generator",
-        "languages": [
-            "JavaScript"
-        ],
-        "screenshot": "img/thumbnail_generator_scr.png",
-        "links": [
-            {
-                "title": "☆YouTubeサムネイルジェネレータ☆",
-                "url": "https://takasa5.github.io/thumbnail_generator/"
-            },
-            {
-                "title": "GitHub",
-                "url": "https://github.com/takasa5/thumbnail_generator"
-            }
-        ]
-    },
-    {
         "title": "SSBU room list",
         "icon": "img/ssbu.jpg",
         "start": "2019/02",
@@ -174,6 +156,7 @@ var works = [
         "abstract-en": "Easy to use room list for SSBU player",
         "languages": [
             "Python",
+            "Flask",
             "Vue.js"
         ],
         "screenshot": "img/roomlist_scr.png",
