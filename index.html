@@ -53,15 +53,15 @@
                         <a class="card-footer-item" href="https://github.com/takasa5" target="_blank">
                             <i class="fab fa-github fa-lg" style="color:#24292e"></i>
                         </a>
-                        <a class="card-footer-item" href="https://takasa-5.blogspot.com/" target="_blank">
+                        <!--<a class="card-footer-item" href="https://takasa-5.blogspot.com/" target="_blank">
                             <i class="fab fa-blogger fa-lg" style="color: #fe6602"></i>
-                        </a>
+                        </a>-->
                     </footer>
                 </div>
             </div>
             <transition name="fade" mode="out-in">
             <div class="level-item" v-if="show">
-                <div class="card">
+                <div class="card" id="works-card">
                     <div class="card-content">
                         <ul>
                         <transition name="fade" mode="out-in">
@@ -82,7 +82,9 @@
                                     <button class="delete" @click="show = !show"></button>
                                 </div>
                             </div>
-                            <img :src="work.screenshot" style="width: 100%; margin: 6px 0;">
+                            <div id="screenshot-wrapper">
+                                <img :src="work.screenshot" id="work-screenshot" style="width: 100%; margin: 6px 0;">
+                            </div>
                             <div class="tags language-tags">
                                 <span v-for="lang in work.languages" class="tag is-info is-rounded">{{ lang }}</span>
                             </div>
