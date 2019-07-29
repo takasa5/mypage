@@ -186,4 +186,27 @@ var works = [
         "screenshot": "img/mypage_v2_scr.png",
         "links": []
     },
+    {
+        "title": "obniz-park",
+        "icon": null,
+        "start": "2019/07",
+        "abstract": "obnizで自分だけのコントローラを作る",
+        "abstract-en": "Make an original controller with obniz",
+        "languages": [
+            "Python",
+            "Responder",
+            "JavaScript"
+        ],
+        "screenshot": "img/park.png",
+        "links": [
+            {
+                "title": "obniz-park",
+                "url": "https://obniz-park--takasago.repl.co"
+            },
+            {
+                "title": "GitHub",
+                "url": "https://github.com/takasa5/obniz-park"
+            }
+        ]
+    },
 ]
