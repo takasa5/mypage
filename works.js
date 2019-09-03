@@ -209,4 +209,26 @@ var works = [
             }
         ]
     },
+    {
+        "title": "Makasha",
+        "icon": "img/makasha.png",
+        "start": "2019/08",
+        "abstract": "自分だけの名曲を記録しよう",
+        "abstract-en": "Record music that impressed you",
+        "languages": [
+            "Ruby on Rails",
+            "JavaScript"
+        ],
+        "screenshot": "img/makasha_scr.png",
+        "links": [
+            {
+                "title": "Makasha",
+                "url": "https://makasha.net/"
+            },
+            {
+                "title": "GitHub",
+                "url": "https://github.com/takasa5/makasha"
+            }
+        ]
+    }
 ]
